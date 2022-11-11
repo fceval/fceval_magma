@@ -1,0 +1,1 @@
+PROGRAMS=(nm objdump readelf ld gprof size)

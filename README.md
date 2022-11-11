@@ -7,5 +7,6 @@ extension project from Magma for building fuzzer-benchmark pairs
 
 **Pre-compiled Bins for testing the bug finding capacities by four sanitizers**: [linked to google drive](https://drive.google.com/file/d/1DSEUm8uIwvi6hTQx7yHPyAW2Sb4Fkr4U/view?usp=sharing). Also,you could build them by the fuzzer llvm_crashes_asan with four sanitizers in instrument.sh.
 
-Usally, we only need to make binaries by the command: cd tools/captain && FUZZER=${fuzzer} TARGET=${bm} CANARY_MODE=2 ./build.sh
+Usally, we only need to make binaries by the command: cd tools/captain && FUZZER=${fuzzer} TARGET=${bm} CANARY_MODE=2 ./build.sh. Please refer to the build****.sh files in the root folder.
+
 For more details, please refer to https://hexhive.epfl.ch/magma/docs/getting-started.html
