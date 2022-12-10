@@ -20,6 +20,8 @@ set -ex
     export LDFLAGS="$LDFLAGS -L$OUT"
     export LIBS="$LIBS -l:afl_driver.o -lstdc++"
 
+    "$MAGMA/build.sh"
+    "$TARGET/build.sh"
 
     "$MAGMA/build.sh"
     "$TARGET/build.sh"

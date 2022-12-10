@@ -18,6 +18,11 @@ fi
     cd "$FUZZER/afl"
     CC=clang make -j $(nproc) && make install
     CC=clang make -j $(nproc) -C llvm_mode && make install
+    # compile afl_driver.cpp
+    mkdir -p "$OUT/afl"
+    "$FUZZER/afl/afl-clang-fast++" $CXXFLAGS -std=c++11 -c -fPIC \
+    "$FUZZER/afl/afl_driver.cpp" -o "$OUT/afl/afl_driver.o"
+    echo "afl fuzzer build"
 )
 
 

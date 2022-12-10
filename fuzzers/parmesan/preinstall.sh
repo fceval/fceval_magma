@@ -2,7 +2,7 @@
 set -e
 #for afl make build-essential clang-9 git wget subversion 
 apt-get update && \
-    apt-get install -y make build-essential clang-9 git wget subversion make build-essential git golang-go \
+    apt-get install -y make build-essential clang-9 git wget subversion make build-essential git \
     python-pip python-dev wget zlib1g-dev libtinfo-dev
 
 # Installl CMake from Kitware apt repository
@@ -50,8 +50,12 @@ update-alternatives \
 # Adapted from parmesan/build/install_tools.sh (because it needs to be run as root)
 pip install --upgrade pip==9.0.3
 pip install wllvm
-
+wget https://dl.google.com/go/go1.17.1.linux-amd64.tar.gz
+tar -xvf go1.17.1.linux-amd64.tar.gz
+mv go /usr/local
+export GOROOT=/usr/local/go
 # Install gllvm
 export GOPATH="/opt/go"
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 mkdir -p $GOPATH
 go get github.com/SRI-CSL/gllvm/cmd/...
