@@ -50,12 +50,10 @@ update-alternatives \
 # Adapted from parmesan/build/install_tools.sh (because it needs to be run as root)
 pip install --upgrade pip==9.0.3
 pip install wllvm
-wget https://dl.google.com/go/go1.17.1.linux-amd64.tar.gz
-tar -xvf go1.17.1.linux-amd64.tar.gz
-mv go /usr/local
-export GOROOT=/usr/local/go
+
+wget -qO- https://go.dev/dl/go1.19.1.linux-amd64.tar.gz | tar xz -C /usr/local/ --strip-components=1
+
 # Install gllvm
 export GOPATH="/opt/go"
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 mkdir -p $GOPATH
-go get github.com/SRI-CSL/gllvm/cmd/...
+go install github.com/SRI-CSL/gllvm/cmd/...@latest
