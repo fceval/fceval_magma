@@ -20,4 +20,8 @@ make -j$(nproc) clean
 #make -j$(nproc)  CFLAGS="-fpie -pie" 
 make -j$(nproc)
 make install
+for P in "${PROGRAMS[@]}"; do
+   cp "$OUT/bin/$P" "$OUT/"
+done
+
 make distclean

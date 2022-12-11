@@ -19,4 +19,5 @@ cd "$TARGET/repo"
 make -j$(nproc) clean
 make -j$(nproc)
 make install
+cp -f "$OUT/bin/cflow" "$OUT/" 
 make -j$(nproc) clean
