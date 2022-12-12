@@ -1,1 +1,1 @@
-PROGRAMS=(nm objdump readelf ld gprof size)
+PROGRAMS=(nm objdump readelf strings strip size)
