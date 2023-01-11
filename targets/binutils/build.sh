@@ -17,8 +17,8 @@ export ASAN_OPTIONS=detect_leaks=0
 cd "$TARGET/repo"
 ./configure  --with-pic --prefix="$OUT/"
 make -j$(nproc) clean
-#make -j$(nproc)  CFLAGS="-fpie -pie" 
-make -j$(nproc)
+make -j$(nproc)  CFLAGS="-fPIC" 
+#make -j$(nproc)
 make install
 source "$TARGET/configrc"
 for P in "${PROGRAMS[@]}"; do
